@@ -1,0 +1,285 @@
+@media only screen and (max-width: 425px) {
+  .navBtn {
+    display: none;
+  }
+
+  .companyName {
+    width: 100%;
+    font-size: 23px;
+    line-height: 3rem;
+  }
+
+  main {
+    padding: 20% 3% 20% 3%;
+  }
+
+  .mastLeft {
+    width: 100%;
+    margin: 0rem 0rem 0rem;
+  }
+
+  .mastLeft p {
+    font-size: 70px;
+    line-height: normal;
+  }
+
+  p.forTech{
+    line-height: normal;
+  }
+
+  b.mastName {
+    font-size: 80px;
+  }
+
+  .forTech {
+    margin-top: -50px;
+  }
+
+  .mastRight {
+    display: none;
+  }
+
+  b.mastCompName {
+    font-size: 80px;
+    padding: 0rem 1rem;
+
+  }
+
+  p.mastDes {
+    font-size: 20px;
+    line-height: normal;
+  }
+
+  center{
+    margin: 6rem 0rem 0rem;
+  }
+
+  center p {
+    width: 96%;
+  }
+
+  .cardSection {
+    margin: 7% 0%;
+  }
+
+  .card {
+    width: 30%;
+  }
+
+  .cardHead {
+    line-height: normal;
+    margin: 20px 0px;
+  }
+
+  .technoCard {
+    width: 5%;
+    margin: 1% 1%;
+  }
+
+  .consultBtn{
+    margin: 0 20% 30%;
+  }
+
+  section.details{
+    position: static;
+    width: 100%;
+    display: block;
+    padding: 4rem 0rem;
+    color: #fff;
+    background: linear-gradient(90deg ,#852787,#d624c1);
+  }
+
+  .leftSec, .rightSec{
+    width: auto;
+  }
+
+  p.captionCardHead{
+    color: #000;
+    padding: 0px 6%;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  p.captionDes{
+    color: #515151;
+    padding: 0px 6%;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .captionTxt{
+    position: static;
+    width: auto;
+  }
+
+  .row1, .row2{
+    display: flex;
+    margin: 2rem 0rem;
+  }
+
+  .smCard{
+    text-align: center;
+    width: 100%;
+  }
+
+  p.count{
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  .emailInp,
+  .passInp {
+    margin: 4% 8%;
+  }
+
+  .contBtn button {
+    width: 84%;
+  }
+
+  section.connectForm{
+    margin-bottom: 10rem;
+  }
+
+  .compTag {
+    color: #fff;
+  }
+
+  footer {
+    color: #fff;
+  }
+
+  span.footCompName {
+    background-color: rgb(118, 87, 196);
+    padding: 0.3rem;
+    border-radius: 7px;
+  }
+
+  .rowOne h3 {
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0.1rem 1rem;
+  }
+
+  .rowOne b {
+    color: #cfcfcf;
+    padding: 0.1rem 1rem;
+    font-weight: 300;
+    font-size: 12px;
+  }
+
+  .menu-icon {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .bar {
+    width: 30px;
+    height: 6px;
+    background-color: #333;
+    margin-bottom: 4px;
+    border-radius: 20px;
+    transition: all 0.3s;
+  }
+
+  /* Animation for the hamburger icon */
+  .menu-icon.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-3px, 11px);
+  }
+
+  .menu-icon.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-icon.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-3px, -11px);
+  }
+
+  .menu{
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    width: 50%;
+    height: 100vh;
+    left: -500px;
+    padding: 2rem;
+    box-shadow: 0px 0px 8px 0px #cfcfcf;
+    transition: all 0.5s;
+  }
+
+  .menu li{
+    list-style: none;
+    padding: 0.6rem 1rem 0.6rem 0.5rem;
+    border-radius: 8px;
+    font-size: 18px;
+    margin: 15px 0;
+    transition: all 0.3s;
+    color: #636363;
+  }
+
+  .menu li:hover{
+    cursor: pointer;
+    background-color: #cfcfcf20;
+    color: rgb(118, 87, 196);
+  }
+
+  .hamComp{
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  button.connect{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 18px;
+  }
+
+  .quickLinks{
+    display: block;
+  }
+
+  .footerTxt{
+    font-size: 40px;
+  }
+
+  .col1 ul, .col2 ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .col1, .col2{
+    width: 100%;
+  }
+
+  .col1 h3, .col2 h3{
+    font-size: 15px;
+  }
+
+  .col1 li, .col2 li{
+    width: fit-content;
+    font-size: 13px;
+    padding-right: 10px;
+  }
+
+  .footEnd{
+    display: block;
+  }
+
+  p.copyright{
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .socialIcons{
+    width: 100%;
+  }
+}
+
+
