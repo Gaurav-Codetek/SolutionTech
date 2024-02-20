@@ -9,6 +9,10 @@
     line-height: 3rem;
   }
 
+  .companyName img{
+    bottom: 3px;
+  }
+
   main {
     padding: 20% 3% 20% 3%;
   }
@@ -72,12 +76,26 @@
   }
 
   .technoCard {
-    width: 5%;
+    flex-direction: column;
+    width: 30%;
     margin: 1% 1%;
   }
 
+  .technoIcon{
+    height: 45px;
+    width: 45px;
+  }
+
+  .technoTxt{
+    padding: 1rem 0rem;
+  }
+
+  .technoCardSec{
+    justify-content: space-evenly;
+  }
+
   .consultBtn{
-    margin: 0 20% 30%;
+    margin: 10% 20% 30%;
   }
 
   section.details{
@@ -86,7 +104,7 @@
     display: block;
     padding: 4rem 0rem;
     color: #fff;
-    background: linear-gradient(90deg ,#852787,#d624c1);
+    background: linear-gradient(90deg ,rgb(5, 37, 58),rgb(7,52,83));
   }
 
   .leftSec, .rightSec{
@@ -141,7 +159,7 @@
   }
 
   section.connectForm{
-    margin-bottom: 10rem;
+    margin-bottom: 4rem;
   }
 
   .compTag {
@@ -150,6 +168,7 @@
 
   footer {
     color: #fff;
+    padding-top: 0rem;
   }
 
   span.footCompName {
@@ -202,7 +221,8 @@
   }
 
   .menu{
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     background-color: #fff;
     width: 50%;
@@ -213,20 +233,21 @@
     transition: all 0.5s;
   }
 
-  .menu li{
-    list-style: none;
+  .menu a{
+    
+    text-decoration: none;
     padding: 0.6rem 1rem 0.6rem 0.5rem;
     border-radius: 8px;
     font-size: 18px;
-    margin: 15px 0;
+    margin: 8px 0;
     transition: all 0.3s;
     color: #636363;
   }
 
-  .menu li:hover{
+  .menu a:hover{
     cursor: pointer;
     background-color: #cfcfcf20;
-    color: rgb(118, 87, 196);
+    color: rgb(7,52,83);
   }
 
   .hamComp{
@@ -235,10 +256,16 @@
     margin-bottom: 20px;
   }
 
-  button.connect{
+  a.connect{
+    text-align: center;
+    color: #fff;
     margin-top: 10px;
     margin-left: 10px;
     font-size: 18px;
+  }
+
+  a.connect:hover{
+    color: #fff;
   }
 
   .quickLinks{

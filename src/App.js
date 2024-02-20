@@ -2,6 +2,7 @@
 import './App.css';
 import './AppMob.css'
 import img3 from './Images/img3.png'
+import logo from './Images/solnfortech.png'
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
@@ -30,32 +31,11 @@ import { FaLayerGroup } from "react-icons/fa";
 import { BiMessageAltCheck } from "react-icons/bi";
 import { GrUserExpert } from "react-icons/gr";
 import { VscGraphLine } from "react-icons/vsc";
+import { FaPhone } from "react-icons/fa";
 
 function App() {
 
   const [ham, setHam] = useState(false)
-
-  const slideFunc = () => {
-    const slider = document.querySelector('.technoCardSec');
-    const slides = document.querySelectorAll('.technoCard');
-
-    slider.style.width = `${slides.length * 100}%`;
-
-    let currentIndex = 0;
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateSlider();
-    }
-
-    function updateSlider() {
-      const translateValue = -currentIndex * (40 / slides.length);
-      slider.style.transform = `translateX(${translateValue}%)`;
-    }
-
-    setInterval(nextSlide, 1000); // Change slide every 2000 milliseconds (2 seconds)  
-
-  }
 
   const onLoad = () => {
     console.log(ham)
@@ -65,19 +45,28 @@ function App() {
 
     if (ham === true) {
       setHam(false)
-      menu.style.left = "0"
+      menu.style.left = "-500px"
     }
     else if (ham === false) {
       setHam(true)
-      menu.style.left = "-500px"
+      menu.style.left = "0"
 
     }
 
   }
 
+  const onMenuClick = () => {
+    const menuIcon = document.getElementById('a');
+    const menu = document.getElementById('menu');
+    menuIcon.classList.remove('active');
+    console.log(ham)
+    setHam(false)
+    menu.style.left = "-500px"
+  }
+
   useEffect(() => {
-    slideFunc()
-    onLoad()
+    //   slideFunc()
+    // onLoad()
   }, [])
   return (
     <>
@@ -85,33 +74,28 @@ function App() {
         <header>
           <nav>
             <div className="companyName">
-              Solutions-<span className='comSecName'>Tech</span>
+              <img src={logo} alt="SolutionsForNet" height='50px' width='230px' />
             </div>
             <div className="navBtn">
-              <li>Home</li>
-              <li>About</li>
-              <li>Services <span className='dropArrow'><RiArrowDropDownLine size="25" /></span></li>
-              <li>Our products</li>
-              <li>Careers</li>
-              <li>Contact us</li>
-              <li>More <span className='dropArrow'><RiArrowDropDownLine size="25" /></span></li>
-              <button className='connect'><p>Connect</p></button>
+              <a href="#">Home</a>
+              <a href="#services">Services</a>
+              <a href="#3">Technology</a>
+              <a href="#about">About</a>
+              <a href="#5">Contact us</a>
+              <a href="#5" className='connect'>Connect</a>
             </div>
-            <div onClick={onLoad} id='a' className="menu-icon">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
+            <div id='a' onClick={()=>onLoad()} className="menu-icon">
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
             </div>
             <div id='menu' className="menu">
-              <li className='hamComp'>Solutions-<span className='comSecName'>Tech</span></li>
-              <li>Home</li>
-              <li>About</li>
-              <li>Services <span className='dropArrow'><RiArrowDropDownLine size="25" /></span></li>
-              <li>Our products</li>
-              <li>Careers</li>
-              <li>Contact us</li>
-              <li>More <span className='dropArrow'><RiArrowDropDownLine size="25" /></span></li>
-              <button className='connect'><p>Connect</p></button>
+              <a onClick={onMenuClick} href="#">Home</a>
+              <a onClick={onMenuClick} href="#services">Services</a>
+              <a onClick={onMenuClick} href="#3">Technology</a>
+              <a onClick={onMenuClick} href="#about">About</a>
+              <a onClick={onMenuClick} href="#5">Contact us</a>
+              <a href='#5' className='connect'>Connect</a>
             </div>
           </nav>
         </header>
@@ -121,16 +105,16 @@ function App() {
               <p>Building <b className='mastName'>Solutions</b></p>
               <p className='forTech'>For Tech <b className='mastCompName'>Giants</b></p>
               <p className="mastDes">We are the best Techno-Solutions provider in the region. Connect for your first step in TECH!</p>
-              <button className='mastConnect'>Connect</button>
-              <FaWhatsapp className='whatsapp' size='35' color='green' />
+              <a href='#5' className='mastConnect'>Connect</a>
               <IoIosMail className='mail' size='35' color='black' />
+              <FaPhone className='phone' size='30' color='rgb(7, 52, 83)' /><span className='phoneNo'>+91-9142049692</span>
             </div>
             <div className="mastRight">
               <img src={img3} alt="vectorImg" />
             </div>
           </div>
         </main>
-        <hr />
+        <hr id='services' />
         <section>
           <center>We Shape The Perfect <span className='section'>Solutions</span>
             <p className="mastDes">We are committed to provide our customers with exceptional service while offering our employees the best training.</p></center>
@@ -138,7 +122,7 @@ function App() {
 
             <div className="card">
               <div className="cardImg">
-                <DiAndroid size='60' color='rgb(118, 23, 187)' />
+                <DiAndroid size='60' color= "rgb(7,52,83)" />
               </div>
               <div className="cardHead">
                 Android Dev
@@ -146,7 +130,7 @@ function App() {
             </div>
             <div className="card">
               <div className="cardImg">
-                <SiBmcsoftware size='60' color='rgb(118, 23, 187)' />
+                <SiBmcsoftware size='60' color= "rgb(7,52,83)" />
               </div>
               <div className="cardHead">
                 Software Dev
@@ -155,7 +139,7 @@ function App() {
 
             <div className="card">
               <div className="cardImg">
-                <GrCloudSoftware size='60' color='rgb(118, 23, 187)' />
+                <GrCloudSoftware size='60' color= "rgb(7,52,83)" />
               </div>
               <div className="cardHead">
                 Cloud Computing
@@ -165,7 +149,7 @@ function App() {
 
             <div className="card">
               <div className="cardImg">
-                <AiFillDatabase size='60' color='rgb(118, 23, 187)' />
+                <AiFillDatabase size='60' color= "rgb(7,52,83)" />
               </div>
               <div className="cardHead">
                 Backend Architect
@@ -175,7 +159,7 @@ function App() {
 
             <div className="card">
               <div className="cardImg">
-                <FaComputer size='60' color='rgb(118, 23, 187)' />
+                <FaComputer size='60' color= "rgb(7,52,83)" />
               </div>
               <div className="cardHead">
                 Web Dev
@@ -185,7 +169,7 @@ function App() {
 
             <div className="card">
               <div className="cardImg">
-                <AiFillSecurityScan size='60' color='rgb(118, 23, 187)' />
+                <AiFillSecurityScan size='60' color= "rgb(7,52,83)" />
               </div>
               <div className="cardHead">
                 Cyber Security
@@ -194,43 +178,40 @@ function App() {
             </div>
           </div>
         </section>
-        <hr />
+        <hr id='3' />
         <section>
           <center>We work on <span className="section">Technologies</span>
             <p className="mastDes">We are committed to provide our customers with exceptional.</p></center>
           <div className="technoCardSec">
             <div className="technoCard">
-              <FaReact size='35' /> <span className="technoTxt">React</span>
+              <FaReact className="technoIcon" size='35' color= "rgb(7,52,83)" /> <div className="technoTxt">React</div>
             </div>
             <div className="technoCard">
-              <FaAngular size='35' /> <span className="technoTxt">Angular</span>
+              <FaAngular className="technoIcon" size='35' color= "rgb(7,52,83)" /> <div className="technoTxt">Angular</div>
             </div>
             <div className="technoCard">
-              <FaNodeJs size='35' /> <span className="technoTxt">Node</span>
+              <FaNodeJs className="technoIcon" size='35' color= "rgb(7,52,83)" /> <div className="technoTxt">Node</div>
             </div>
             <div className="technoCard">
-              <SiMongodb size='35' /> <span className="technoTxt">Mongo</span>
+              <SiMongodb className="technoIcon" size='35' color= "rgb(7,52,83)" /> <div className="technoTxt">Mongo</div>
             </div>
             <div className="technoCard">
-              <SiExpress size='35' /> <span className="technoTxt">Express</span>
+              <SiExpress className="technoIcon" size='35' color= "rgb(7,52,83)" /> <div className="technoTxt">Express</div>
             </div>
             <div className="technoCard">
-              <SiBlockchaindotcom size='35' /> <span className="technoTxt">BlockChain</span>
+              <SiBlockchaindotcom className="technoIcon" size='35' color= "rgb(7,52,83)" /> <div className="technoTxt">BlockChain</div>
             </div>
             <div className="technoCard">
-              <SiMysql size='35' /> <span className="technoTxt">SQL</span>
+              <SiMysql className="technoIcon" size='35' color= "rgb(7,52,83)" /> <div className="technoTxt">SQL</div>
             </div>
             <div className="technoCard">
-              <BiLogoPostgresql size='35' /> <span className="technoTxt">PosgreSQL</span>
-            </div>
-            <div className="technoCard">
-              <SiPython size='35' /> <span className="technoTxt">Python</span>
+              <BiLogoPostgresql className="technoIcon" size='35' color= "rgb(7,52,83)" /> <div className="technoTxt">PosgreSQL</div>
             </div>
           </div>
-          <div className="consultBtn">
-            <p>Consult Now</p>
+          <a href='#5' className="consultBtn">
+            <p id="about">Consult Now</p>
             <PiTelegramLogo color='#fff' size='25' />
-          </div>
+          </a>
         </section>
         {/* <hr /> */}
         <section className='details'>
@@ -263,25 +244,25 @@ function App() {
               We’re Committed To Deliver High Quality Projects.
             </div>
           </div>
-          
+
           <br />
           <div className="rightSec">
             <p className="captionCardHead">
               WE’RE TRUSTED BY MORE THAN 100 CLIENTS
             </p>
             <p className="captionDes">
-              Our sole aim is to make you get recognition in the online market. Evolving your business to a newer height is our business. With our years of experience, we give the word of honour to provide you the best of the services by our savvy people.
+              SolutionsForNet is an offshore provider of outsourced development solutions, we provide affordable solutions to organizations worldwide seeking software application development,JAVA ,Node, React js, Angular, PHP core programming, CMS, iOS mobile applications, Games APP’s, web design and web development services, web optimization, e-commerce Portals, web services application & social media development services.
             </p>
             <br />
             <div className="btn">
-              <button className='captionBtn'>Consult Now <PiTelegramLogo className='captionBtnIcon' color='#fff' size='25' />
-              </button>
+              <a href='#5' className='captionBtn'>Consult Now <PiTelegramLogo className='captionBtnIcon' color='#fff' size='25' />
+              </a>
             </div>
 
           </div>
-        </section>
-        {/* <hr /> */}
 
+        </section>
+        <hr id="5" />
         <section className='connectForm'>
           <center><span className="section">Connect </span>with us
             <p className="mastDes">We are the best Techno-Solutions provider in the region. Connect for your first step in TECH!</p>
@@ -297,9 +278,14 @@ function App() {
             <label className='emailLabel' htmlFor="Email">Email address</label>
           </div>
           <div className="emailInp">
+            <input type="number" id='PhNO' required />
+            <br />
+            <label className='emailLabel' htmlFor="PhNO">Phone number</label>
+          </div>
+          <div className="emailInp">
             <input type="text" id='query' required />
             <br />
-            <label className='emailLabel' htmlFor="query">your Query</label>
+            <label className='emailLabel' htmlFor="query">Your query</label>
           </div>
           <div className="contBtn">
             <button>Continue</button>
@@ -307,17 +293,16 @@ function App() {
         </section>
         <footer>
           <div className="compLogo">
-            <div className="companyName footerTxt">
-              Solutions-<span className='footerCompName'>Tech</span>
-            </div>
+            
             <div className="quickLinks">
               <div className="col1">
                 <h3>Important Links</h3>
                 <ul>
-                  <li>Home</li>
-                  <li>About us</li>
-                  <li>Services</li>
-                  <li>Contact us</li>
+                  <a href="#">Home</a>
+                  <a href='#services'>Services</a>
+                  <a href="#3">Technology</a>
+                  <a href='#about'>About us</a>
+                  <a href='#5'>Contact us</a>
                 </ul>
               </div>
               <div className="col2">
@@ -348,18 +333,18 @@ function App() {
                 </ul>
               </div>
               <div className="col2">
-                <h3>Connect with Soutions-Tech</h3>
+                <h3>Connect with SoutionsForNet</h3>
                 <ul>
-                  <li>2nd Floor Emerald Plaza, Telephone Exchange Road, Opposite CG Plaza, Bilaspur (C.G) Pin 495001</li>
-                  <li>info@solutionstech.com</li>
-                  <li>9109911372,9201996377</li>
+                  <li>L-122, First floor, sector-12 noida Uttar Pradesh 201301</li>
+                  <li>sales@solutionsfornet.com</li>
+                  <li>9142049692</li>
                 </ul>
               </div>
             </div>
             <hr className='footer' />
             <div className="footEnd">
               <p className="copyright">
-                Copyright © 2024 Solutions-Tech. All Rights Reserved
+                Copyright © 2024 SolutionsForNet. All Rights Reserved
               </p>
               <div className="socialIcons">
                 <AiFillInstagram className='icons' size='30' />
